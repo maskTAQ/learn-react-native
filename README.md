@@ -33,6 +33,12 @@
 ### 总结
 组件完全是受控的，没有内部私有状态，利用回调或者组件的静态属性暴露出组件的内部状态。将源码中的实现方式改动了一下 采用`Animated.parallel()`实现并行动画。
 
+## checkboxGroup
+  1. 构造函数中初始化selected 并触发onSelect
+  2. render 遍历渲染checkbox 并传入change回调
+  3. change回调中更新组件中的selected
+  4. 提供了木偶功能 由第三方操控组件数据
+  
 ## [react-native-echarts](https://github.com/somonus/react-native-echarts/tree/master/src/components/Echarts)的实现方式
 ### 知识点
 `WebView、echart、injectedJavaScript。`
