@@ -23,3 +23,13 @@
 
   ## Avatar
   如果传入了src属性 就return Image组件。不然就返回一个View包装的Icon组件。Icon传入了name[可能是根据name构造不同的icon]。
+
+  ## [react-native-echarts](https://github.com/somonus/react-native-echarts/tree/master/src/components/Echarts)的实现方式
+  WebView、echart、injectedJavaScript。
+
+   1. 通过WebView组件引入html文件。
+   2. HTML文件中定义好了文档结构，引入了echart。
+   3. 在WebView渲染前通过`injectedJavaScript`传入参数并调用。
+
+  因为html存储在本地所以需要注意一个问题。
+  release版本只能使用uri加载资源，android把tpl.html文件放在android/app/src/main/assets文件里，使用uri:'file:///android_asset/tpl.html'这个地址加载，ios在项目目录下建个文件夹，把tpl文件放里面去，使用uri:'文件名/tpl'加载，这样能使用。
