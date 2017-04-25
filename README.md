@@ -20,3 +20,6 @@
       })
   });
   ```
+
+  ## Avatar
+  如果传入了src属性 就return Image组件。不然就返回一个View包装的Icon组件。Icon传入了name[可能是根据name构造不同的icon]。
