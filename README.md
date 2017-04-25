@@ -31,7 +31,7 @@
 ### 实现步骤
     交互时动态改变按钮的透明度、ripple层的大小、更改icon属性的name属性值。
 ### 总结
-组件完全是受控的，没有内部私有状态，利用回调或者组件的静态属性暴露出组件的内部状态。将源码中的实现方式改动了以下 采用`Animated.parallel()`实现并行动画。
+组件完全是受控的，没有内部私有状态，利用回调或者组件的静态属性暴露出组件的内部状态。将源码中的实现方式改动了一下 采用`Animated.parallel()`实现并行动画。
 
 ## [react-native-echarts](https://github.com/somonus/react-native-echarts/tree/master/src/components/Echarts)的实现方式
 ### 知识点
