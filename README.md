@@ -2,9 +2,8 @@
 最近发现读源码的学习效率比较高,又发现了一个react-native组件库[mrn](https://github.com/binggg/mrn),所以学习以下。
 
 ## Ripple
-虽然后来的版本官方实现了这个特效组件 `TouchableNativeFeedback `,但是学会了思路,后期自己也可以实现比较酷的特效,想想就很酷。
+虽然后来的版本官方实现了这个特效组件 `TouchableNativeFeedback `,但是学习一下思路也是很棒的。
 通过[手势](https://github.com/jabez128/jabez128.github.io/issues/1)来触发来调用组件内部的animate的周期函数实现ripple特效。
-  1. 手势操作的api跟源码的版本做了更改。
 
 ### 知识点
 
@@ -21,7 +20,9 @@
   ```
 
 ### 实现步骤
-    动态改变背景层的颜色、ripple层的大小。
+动态改变背景层的颜色、ripple层的大小。
+### 总结
+手势操作的api跟源码的版本做了更改,改为现在了写法。
 
 ## Avatar
   如果传入了src属性 就return Image组件。不然就返回一个View包装的Icon组件。Icon传入了name[可能是根据name构造不同的icon]。
@@ -29,16 +30,18 @@
 ## CheckBox
 ### 实现步骤
     交互时动态改变按钮的透明度、ripple层的大小、更改icon属性的name属性值。
+### 总结
+组件完全是受控的，没有内部私有状态，利用回调或者组件的静态属性暴露出组件的内部状态。将源码中的实现方式改动了以下 采用`Animated.parallel()`实现并行动画。
 
 ## [react-native-echarts](https://github.com/somonus/react-native-echarts/tree/master/src/components/Echarts)的实现方式
 ### 知识点
-    WebView、echart、injectedJavaScript。
+`WebView、echart、injectedJavaScript。`
 ### 实现步骤
    1. 通过WebView组件引入html文件。
    2. HTML文件中定义好了文档结构，引入了echart。
    3. 在WebView渲染前通过`injectedJavaScript`传入参数并调用。
 
 ### 注意！！！
-    因为html存储在本地所以需要注意一个问题。release版本只能使用uri加载资源，android把tpl.html文件放在
-    android/app/src/main/assets文件里，使用uri:'file:///android_asset/tpl.html'这个地址加载，
-    ios在项目目录下建个文件夹，把tpl文件放里面去，使用uri:'文件名/tpl'加载，这样能使用。
+因为html存储在本地所以需要注意一个问题。release版本只能使用uri加载资源，android把tpl.html文件放在
+android/app/src/main/assets文件里，使用uri:'file:///android_asset/tpl.html'这个地址加载，
+ios在项目目录下建个文件夹，把tpl文件放里面去，使用uri:'文件名/tpl'加载，这样能使用。
