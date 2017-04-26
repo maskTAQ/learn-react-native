@@ -38,7 +38,7 @@
   2. render 遍历渲染checkbox 并传入change回调
   3. change回调中更新组件中的selected
   4. 提供了木偶功能 由第三方操控组件数据
-  
+
 ## [react-native-echarts](https://github.com/somonus/react-native-echarts/tree/master/src/components/Echarts)的实现方式
 ### 知识点
 `WebView、echart、injectedJavaScript。`
@@ -51,3 +51,9 @@
 因为html存储在本地所以需要注意一个问题。release版本只能使用uri加载资源，android把tpl.html文件放在
 android/app/src/main/assets文件里，使用uri:'file:///android_asset/tpl.html'这个地址加载，
 ios在项目目录下建个文件夹，把tpl文件放里面去，使用uri:'文件名/tpl'加载，这样能使用。
+
+### [自定义字体](http://bbs.reactnative.cn/topic/204/%E8%AE%BE%E7%BD%AEreact-native%E8%87%AA%E5%AE%9A%E4%B9%89%E5%AD%97%E4%BD%93)
+文章中讲了对原组件的render方法做劫持，渲染自己修饰过后的组件。
+
+### [iconfont](http://www.tuicool.com/articles/am6ze22)
+为`unicode`编码起个好记得名字也就是key,再定义一个将key输出成`unicode`编码的方法。在`Text`组件中调用方法输入字体名字就可以显示字体图标了,记得引入字体哦！
