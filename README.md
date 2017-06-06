@@ -57,3 +57,6 @@ ios在项目目录下建个文件夹，把tpl文件放里面去，使用uri:'文
 
 ### [iconfont](http://www.tuicool.com/articles/am6ze22)
 为`unicode`编码起个好记得名字也就是key,再定义一个将key输出成`unicode`编码的方法。在`Text`组件中调用方法输入字体名字就可以显示字体图标了,记得引入字体哦！
+
+### 忽略警告
+在代码中添加`console.disableYellowBox = true;`;如果忽略部分警告可以对应的值可以设置为忽略关键词数组`console.ignoredYellowBox = ['Warning: Each child'];`
