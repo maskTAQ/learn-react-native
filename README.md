@@ -60,3 +60,6 @@ ios在项目目录下建个文件夹，把tpl文件放里面去，使用uri:'文
 
 ### 忽略警告
 在代码中添加`console.disableYellowBox = true;`;如果忽略部分警告可以对应的值可以设置为忽略关键词数组`console.ignoredYellowBox = ['Warning: Each child'];`
+
+### 项目依赖问题
+貌似可以通过`react-native link`直接一键依赖,免去繁琐的配置依赖文件。
