@@ -63,3 +63,7 @@ ios在项目目录下建个文件夹，把tpl文件放里面去，使用uri:'文
 
 ### 项目依赖问题
 貌似可以通过`react-native link`直接一键依赖,免去繁琐的配置依赖文件。
+
+### android版本号、app名称
+/android/app/build.gradle defaultConfig中更改对应的键值 & /android/app/src/main/AndroidManifest.xml 中的`android:versionName` 主要依据前者
+/android/app/src/main/res/values/strings.xml 中的值
